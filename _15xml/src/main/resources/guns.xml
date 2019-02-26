@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guns name="MyFund"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="guns.xsd">
+
+    <gun>
+        <model>nazar</model>
+        <origin>Ukraine</origin>
+        <handy>1</handy>
+        <material>sheshosy</material>
+        <TTC>
+            <sight_range>4</sight_range>
+            <stock_availability>no</stock_availability>
+            <optics_availability>yes</optics_availability>
+            <carry>close</carry>
+
+        </TTC>
+    </gun>
+
+
+    <gun>
+        <model>Dmytro</model>
+        <origin>America</origin>
+        <handy>2</handy>
+        <material>leather</material>
+        <TTC>
+            <sight_range>6</sight_range>
+            <stock_availability>yes</stock_availability>
+            <optics_availability>yes</optics_availability>
+            <carry>far</carry>
+
+        </TTC>
+    </gun>
+
+
+</guns>

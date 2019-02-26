@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="guns">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="gun" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="model" type="xs:string"/>
+                            <xs:element name="origin" type="origins"/>
+                            <xs:element name="handy" type="hands"/>
+                            <xs:element name="material" type="materials"/>
+
+                            <xs:element name="TTC">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="sight_range" type="typecast" minOccurs="0"/>
+                                        <xs:element name="stock_availability" type="stock" minOccurs="0"/>
+                                        <xs:element name="optics_availability" type="optics" minOccurs="0"/>
+                                        <xs:element name="carry" type="where" minOccurs="0"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+<!--types-->
+
+
+    <xs:simpleType name="typecast">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="4"/>
+            <xs:maxInclusive value="15"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+
+    <xs:simpleType name="optics" final="restriction" >
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="yes" />
+            <xs:enumeration value="no" />
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="stock" final="restriction" >
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="yes" />
+            <xs:enumeration value="no" />
+        </xs:restriction>
+    </xs:simpleType>
+
+
+
+    <xs:simpleType name="hands"  >
+        <xs:restriction base="xs:integer">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="origins" final="restriction" >
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Ukraine" />
+            <xs:enumeration value="America" />
+            <xs:enumeration value="Poland" />
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="materials" final="restriction" >
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="leather" />
+            <xs:enumeration value="metal" />
+            <xs:enumeration value="sheshosy" />
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="where" final="restriction" >
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="close" />
+            <xs:enumeration value="middle" />
+            <xs:enumeration value="far" />
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
